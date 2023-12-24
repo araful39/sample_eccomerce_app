@@ -30,7 +30,7 @@ class IntroPage extends StatelessWidget {
               MyButton(
                   child: Icon(Icons.arrow_forward),
                   onTap: (){
-                    Navigator.pushNamed(context, '/home_page');
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage()));
                   })
             ],
           ),

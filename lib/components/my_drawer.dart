@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:minimum_ecommerce_app/pages/cart_page.dart';
 import 'package:minimum_ecommerce_app/pages/intro_page.dart';
 
 import 'my_list_tile.dart';
@@ -46,14 +47,16 @@ class MyDrawer extends StatelessWidget {
                 //pop drawer first
                 Navigator.pop(context);
                 //go to cart page
-                Navigator.pushNamed(context, '/cart_page');
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage()));
               }),
           Spacer(),
           MyListTile(
             name: 'Exit',
             icon: Icons.exit_to_app,
-            onTap: () => Navigator.pushNamedAndRemoveUntil(
-                context, 'intro_page', (route) => false),
+            onTap: () => 
+                // Navigator.pushNamedAndRemoveUntil(
+                // context, 'intro_page', (route) => false),
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>IntroPage()))
           ),
         ],
       ),
