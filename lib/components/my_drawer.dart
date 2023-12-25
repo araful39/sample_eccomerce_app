@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:minimum_ecommerce_app/components/my_list_tile.dart';
 import 'package:minimum_ecommerce_app/pages/cart_page.dart';
 import 'package:minimum_ecommerce_app/pages/intro_page.dart';
 
-import 'my_list_tile.dart';
+
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({
