@@ -3,17 +3,20 @@ import 'package:flutter/material.dart';
 class MyContainer extends StatelessWidget {
   final String productName;
   final double price;
-  final Color color;
+  final Color textColor;
   final Color containerColor;
   final Function()? onTap;
 
   final String imagepath;
-  MyContainer(
-      {super.key,
-      required this.productName,
-      required this.price,
-      required this.imagepath,
-      required this.color, required this.containerColor, required this.onTap,});
+  MyContainer({
+    super.key,
+    required this.productName,
+    required this.price,
+    required this.imagepath,
+    required this.textColor,
+    required this.containerColor,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +29,10 @@ class MyContainer extends StatelessWidget {
             color: containerColor, borderRadius: BorderRadius.circular(15)),
         child: Column(
           children: [
-         
-            Image.network(imagepath,height: 150,),
+            Image.network(
+              imagepath,
+              height: 150,
+            ),
             Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -38,22 +43,29 @@ class MyContainer extends StatelessWidget {
                     Text(
                       productName,
                       style: TextStyle(
-                          color: color,
+                          color: textColor,
                           fontSize: 30,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 5,),
-                    Text('tk : ${price.toString()}', style: TextStyle(color: color))
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      children: [
+                        Text('1 kg ',
+                            style: TextStyle(color: textColor)),
+                        Text(' ${price.toString()}: tk',
+                            style: TextStyle(color: textColor)),
+                      ],
+                    )
                   ],
                 ),
                 InkWell(
-                  onTap: onTap
-                  ,
+                  onTap: onTap,
                   child: Container(
-               decoration: BoxDecoration(
-                 color: Colors.indigoAccent,
-                 borderRadius: BorderRadius.circular(10)
-               ),
+                    decoration: BoxDecoration(
+                        color: Colors.indigoAccent,
+                        borderRadius: BorderRadius.circular(10)),
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Icon(

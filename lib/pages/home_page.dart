@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
- addToCart(int index) {
+void addToCart(int index) {
     showDialog(context: context, builder: (context){
       return AlertDialog(
         content: Text("add succesfully",style: TextStyle(
@@ -32,25 +32,23 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[400],
       appBar: AppBar(
+        actions: [
+          InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage()));
+              },
+              child: Icon(Icons.shopping_cart,color: Colors.indigoAccent,size: 50,)),
+          SizedBox(
+            width: 10,
+          )
+        ],
         // leading: Icon(Icons.menu),
         centerTitle: true,
         backgroundColor: Theme.of(context).colorScheme.background,
         title: Text("Shop page"),
       ),
       drawer: MyDrawer(),
-      floatingActionButton: InkWell(
-          onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage()));
-          },
-          child: Container(
-      decoration: BoxDecoration(
-        color: Colors.indigo,
-        borderRadius: BorderRadius.circular(15)
-      ),
-              child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Icon(Icons.shopping_cart,color: Colors.white,),
-          ))),
+
       body: GridView.builder(
           gridDelegate:
               SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
@@ -59,7 +57,7 @@ class _HomePageState extends State<HomePage> {
             return MyContainer(
               productName: products[index][0],
               price: products[index][1],
-              color: Colors.indigoAccent,
+                textColor: Colors.indigoAccent,
               imagepath: products[index][2],
               containerColor: Colors.white,
             onTap:()=>
