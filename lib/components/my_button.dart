@@ -3,7 +3,7 @@ class MyButton extends StatelessWidget {
   final Function() onTap;
  final Widget child;
 
-   MyButton({super.key, required this.child , required this.onTap});
+   const MyButton({super.key, required this.child , required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class MyButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(15)
 
         ),
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
 
         child: child,
       ),

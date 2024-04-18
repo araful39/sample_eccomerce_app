@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:minimum_ecommerce_app/components/my_list_tile.dart';
 import 'package:minimum_ecommerce_app/pages/cart_page.dart';
 import 'package:minimum_ecommerce_app/pages/intro_page.dart';
-
-
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({
@@ -21,17 +18,17 @@ class MyDrawer extends StatelessWidget {
             child: DrawerHeader(
                 decoration: BoxDecoration(boxShadow: [
                   BoxShadow(
-                      offset: Offset(0, 4),
-                      color: Color(0xFFF9D276).withOpacity(0.15),
+                      offset: const Offset(0, 4),
+                      color: const Color(0xFFF9D276).withOpacity(0.15),
                       spreadRadius: 1,
                       blurRadius: 50)
                 ], color: Colors.white),
-                child: Icon(
+                child: const Icon(
                   Icons.shopping_bag,
                   size: 100,
                 )),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           MyListTile(
@@ -48,17 +45,18 @@ class MyDrawer extends StatelessWidget {
                 //pop drawer first
                 Navigator.pop(context);
                 //go to cart page
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const CartPage()));
               }),
-          Spacer(),
+          const Spacer(),
           MyListTile(
-            name: 'Exit',
-            icon: Icons.exit_to_app,
-            onTap: () => 
-                // Navigator.pushNamedAndRemoveUntil(
-                // context, 'intro_page', (route) => false),
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>IntroPage()))
-          ),
+              name: 'Exit',
+              icon: Icons.exit_to_app,
+              onTap: () =>
+                  // Navigator.pushNamedAndRemoveUntil(
+                  // context, 'intro_page', (route) => false),
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => const IntroPage()))),
         ],
       ),
     );

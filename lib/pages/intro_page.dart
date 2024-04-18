@@ -12,28 +12,26 @@ class IntroPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
-        child: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.shopping_bag,
-                color: Theme.of(context).colorScheme.inversePrimary,
-                size: 100,
-              ),
-              Text(
-                "Minimum Shop",
-                style: TextStyle(fontSize: 50),
-              ),
-              Text("Premium Quality products"),
-              SizedBox(height: 10,),
-              MyButton(
-                  child: Icon(Icons.arrow_forward),
-                  onTap: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage()));
-                  })
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.shopping_bag,
+              color: Theme.of(context).colorScheme.inversePrimary,
+              size: 100,
+            ),
+            const Text(
+              "Minimum Shop",
+              style: TextStyle(fontSize: 50),
+            ),
+            const Text("Premium Quality products"),
+            const SizedBox(height: 10,),
+            MyButton(
+                child: const Icon(Icons.arrow_forward),
+                onTap: (){
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const HomePage()));
+                })
+          ],
         ),
       ),
     );

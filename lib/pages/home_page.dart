@@ -15,8 +15,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 void addToCart(int index) {
     showDialog(context: context, builder: (context){
-      return AlertDialog(
-        content: Text("add succesfully",style: TextStyle(
+      return const AlertDialog(
+        content: Text("add successfully",style: TextStyle(
 
         ),),
       );
@@ -35,23 +35,23 @@ void addToCart(int index) {
         actions: [
           InkWell(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const CartPage()));
               },
-              child: Icon(Icons.shopping_cart,color: Colors.indigoAccent,size: 50,)),
-          SizedBox(
+              child: const Icon(Icons.shopping_cart,color: Colors.indigoAccent,size: 50,)),
+          const SizedBox(
             width: 10,
           )
         ],
         // leading: Icon(Icons.menu),
         centerTitle: true,
         backgroundColor: Theme.of(context).colorScheme.background,
-        title: Text("Shop page"),
+        title: const Text("Shop page"),
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
 
       body: GridView.builder(
           gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+              const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
           itemCount: products.length,
           itemBuilder: (context, index) {
             return MyContainer(

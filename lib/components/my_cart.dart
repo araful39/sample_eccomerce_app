@@ -6,7 +6,7 @@ class MyCart extends StatelessWidget {
   final String imagePath;
   final void Function() onTap;
 
-  MyCart(
+  const MyCart(
       {super.key,
       required this.productName,
       required this.imagePath,
@@ -18,7 +18,7 @@ class MyCart extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(15)
@@ -33,22 +33,22 @@ class MyCart extends StatelessWidget {
 
             Expanded(
               flex: 3,
-              child: Column(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
                     productName,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.indigo,
                         fontSize: 25,
                         fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 10,),
-                  Text('1 kg ',
+                  const SizedBox(width: 10,),
+                  const Text('1 kg ',
                       style: TextStyle(color: Colors.indigo)),
 
                   Text("${price.toString()} tk ",
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.indigo,
 
                       ),
@@ -60,7 +60,7 @@ class MyCart extends StatelessWidget {
               flex: 2,
               child: InkWell(
                 onTap:onTap,
-                child: Icon(Icons.backspace_outlined,size: 40),
+                child: const Icon(Icons.backspace_outlined,size: 40),
               ),
             )
           ],

@@ -8,7 +8,7 @@ class MyContainer extends StatelessWidget {
   final Function()? onTap;
 
   final String imagepath;
-  MyContainer({
+  const MyContainer({
     super.key,
     required this.productName,
     required this.price,
@@ -33,7 +33,7 @@ class MyContainer extends StatelessWidget {
               imagepath,
               height: 150,
             ),
-            Spacer(),
+            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -47,7 +47,7 @@ class MyContainer extends StatelessWidget {
                           fontSize: 30,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Row(
@@ -66,8 +66,8 @@ class MyContainer extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.indigoAccent,
                         borderRadius: BorderRadius.circular(10)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
+                    child: const Padding(
+                      padding: EdgeInsets.all(10.0),
                       child: Icon(
                         Icons.add,
                         color: Colors.white,
@@ -77,7 +77,7 @@ class MyContainer extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             )
           ],
